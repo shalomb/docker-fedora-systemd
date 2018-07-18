@@ -7,7 +7,7 @@ for i in */; do
     [[ -e Dockerfile ]]
     image_name='fedora-systemd'
     image_tag="${PWD##*$image_name/}"
-    build_image="$USER/fedora-systemd:$image_tag"
+    build_image="unop/fedora-systemd:$image_tag"
     echo
     set -x
     docker pull "$build_image" || true
