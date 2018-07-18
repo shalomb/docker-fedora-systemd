@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -eu -o pipefail
+
+for i in */; do
+  ( cd "$i"
+    [[ -e Dockerfile ]]
+    image_name='fedora-systemd'
+    image_tag="${PWD##*$image_name/}"
+    build_image="$USER/fedora-systemd:$image_tag"
+    echo
+    set -x
+    docker build -t "$build_image" .
+    docker push "$build_image"
+  )
+done
