@@ -11,6 +11,5 @@ for i in */; do
     echo
     set -x
     docker build -t "$build_image" .
-    docker push "$build_image"
   )
 done
