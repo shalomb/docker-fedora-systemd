@@ -18,7 +18,5 @@ install:
 
 after_success:
   - echo >&2 "Triggering hub build"
-  - curl -vfsSL
-    -X POST -H "Content-Type: application/json" --data '{"build": true}'
-    https://registry.hub.docker.com/u/unop/fedora-systemd/trigger/759a1999-3fad-4c2d-888b-7c686b8dbb39/
+  - curl -vfsSL -X POST -H "Content-Type: application/json" --data '{"build": true}' https://registry.hub.docker.com/u/unop/fedora-systemd/trigger/759a1999-3fad-4c2d-888b-7c686b8dbb39/
 
