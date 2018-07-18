@@ -5,13 +5,6 @@ sudo: required
 services:
   - docker
 
-addons:
-  apt:
-    packages:
-      - curl
-
-warnings_are_errors: true
-
 install:
   - echo >&2 "Triggering CI build"
   - ./build
